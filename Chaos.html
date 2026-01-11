@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banana Chaos Generator for Salwa</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ffeb3b, #fff176); /* Banana yellow gradient */
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Playful font for chaos */
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #f57f17; /* Deep orange for banana peel vibe */
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            background-color: #ffca28;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #ffb300;
+            transform: scale(1.1);
+        }
+
+        .output {
+            margin-top: 30px;
+            font-size: 1.8em;
+            font-style: italic;
+            color: #d32f2f; /* Red for chaotic energy */
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #f57f17;
+            border-radius: 15px;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .output.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Salwa's Banana Chaos Generator</h1>
+        <p class="subtitle">Miss Banana's Chaotic Mind Unleashed! Click to generate random banana madness.</p>
+        <button id="generate-btn">Generate Chaos!</button>
+        <div id="chaos-output" class="output"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const generateBtn = document.getElementById('generate-btn');
+            const output = document.getElementById('chaos-output');
+
+            const chaosMessages = [
+                "Salwa slips on a banana peel and invents a new dance move!",
+                "Miss Banana's chaotic mind turns a simple fruit into a world-domination plan.",
+                "In Salwa's world, bananas argue philosophy while peeling themselves.",
+                "Chaotic alert: Banana army rises under Miss Banana's command!",
+                "Salwa's idea: Banana-powered rocket to the moon. Who's in?",
+                "Miss Banana's mind: Where chaos meets yellow perfection.",
+                "Random chaos: Salwa turns bananas into invisible ink for secret messages.",
+                "Banana fact from Salwa: They dream in yellow and scheme in peels.",
+                "Chaotic mind unlocked: Miss Banana invents banana-flavored chaos theory.",
+                "Salwa's daily chaos: Bananas juggling themselves in her dreams."
+            ];
+
+            generateBtn.addEventListener('click', () => {
+                const randomIndex = Math.floor(Math.random() * chaosMessages.length);
+                output.textContent = chaosMessages[randomIndex];
+                output.classList.add('visible');
+            });
+        });
+    </script>
+</body>
+</html>
